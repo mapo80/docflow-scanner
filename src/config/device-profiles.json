@@ -1,0 +1,51 @@
+{
+  "profiles": [
+    {
+      "id": "desktop-mid",
+      "match": {
+        "uaIncludes": [
+          "Windows",
+          "Macintosh",
+          "X11"
+        ]
+      },
+      "thresholdOverrides": {
+        "blurMin": 0.35,
+        "glarePctMax": 2.0,
+        "coveragePctMin": 35.0,
+        "centerOffsetPctMax": 10.0
+      }
+    },
+    {
+      "id": "mobile-mid",
+      "match": {
+        "uaIncludes": [
+          "Android",
+          "iPhone"
+        ]
+      },
+      "thresholdOverrides": {
+        "blurMin": 0.38,
+        "glarePctMax": 2.5,
+        "coveragePctMin": 32.0,
+        "centerOffsetPctMax": 12.0
+      }
+    },
+    {
+      "id": "mobile-low",
+      "match": {
+        "uaIncludes": [
+          "Android"
+        ],
+        "maxDeviceMemoryGB": 4
+      },
+      "thresholdOverrides": {
+        "blurMin": 0.32,
+        "glarePctMax": 3.0,
+        "coveragePctMin": 30.0,
+        "centerOffsetPctMax": 14.0
+      }
+    }
+  ],
+  "defaultProfileId": "desktop-mid"
+}

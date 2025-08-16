@@ -1,0 +1,22 @@
+{
+  "defaults": {
+    "coveragePctMin": 35.0,
+    "centerOffsetPctMax": 10.0,
+    "blurMin": 0.35,
+    "glarePctMax": 2.0
+  },
+  "overrides": {
+    "A4": {
+      "coveragePctMin": 35.0,
+      "centerOffsetPctMax": 10.0
+    },
+    "ID1": {
+      "coveragePctMin": 35.0,
+      "centerOffsetPctMax": 10.0
+    },
+    "Receipt": {
+      "coveragePctMin": 20.0,
+      "centerOffsetPctMax": 12.0
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/* Simple fade & scale animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.95) }
+  100% { opacity: 1; transform: scale(1) }
+}
+.fade-in { animation: fadeIn 180ms ease-out forwards }
+.scale-in { animation: scaleIn 200ms cubic-bezier(.2,.8,.2,1) forwards }
+.thumb-pop { transition: transform 120ms ease, box-shadow 120ms ease }
+.thumb-pop:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,.35) }
+.modal-appear { animation: fadeIn 120ms ease-out forwards }
+.modal-card { animation: scaleIn 220ms cubic-bezier(.2,.8,.2,1) forwards }
+.radial { animation: scaleIn 140ms ease-out forwards }

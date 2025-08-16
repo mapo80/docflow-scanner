@@ -1,0 +1,8 @@
+{
+  "useThreads": true,
+  "useSIMD": true,
+  "enableAutoCapture": true,
+  "enablePostProcessing": false,
+  "enablePdfExport": false,
+  "enablePerfHUD": false
+}

@@ -1,0 +1,5 @@
+{
+  "previewFpsTarget": 20,
+  "maxFrameLatencyMs": 33.0,
+  "initWarmupMs": 2000
+}

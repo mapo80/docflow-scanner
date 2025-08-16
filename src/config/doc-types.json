@@ -1,0 +1,21 @@
+{
+  "types": [
+    {
+      "name": "A4",
+      "targetAspect": 1.414,
+      "aspectTolerancePct": 12.0,
+      "minCoveragePct": 30.0
+    },
+    {
+      "name": "ID1",
+      "targetAspect": 1.586,
+      "aspectTolerancePct": 12.0,
+      "minCoveragePct": 20.0
+    },
+    {
+      "name": "Receipt",
+      "minLongShortRatio": 2.0,
+      "minCoveragePct": 10.0
+    }
+  ]
+}

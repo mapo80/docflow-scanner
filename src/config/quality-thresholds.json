@@ -1,0 +1,12 @@
+{
+  "blurMin": 0.35,
+  "glarePctMax": 2.0,
+  "coveragePctMin": 35.0,
+  "centerOffsetPctMax": 10.0,
+  "stabilityFrames": 8,
+  "aspectTargets": {
+    "A4": 1.414,
+    "ID1": 1.586
+  },
+  "aspectTolerancePct": 10.0
+}
