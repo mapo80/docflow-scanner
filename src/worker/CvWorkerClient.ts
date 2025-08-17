@@ -22,6 +22,10 @@ export class CvWorkerClient {
     await this._postAwait({ type: 'init', engineLocation, useThreads, useSIMD, policies })
   }
 
+  async updatePolicies(policies: { thresholds: any, adaptive: any, features: any }) {
+    await this._postAwait({ type: 'updatePolicies', policies })
+  }
+
   async processPreviewFrame(bitmap: ImageBitmap): Promise<PreviewAnalysis> {
     const res = await this._postAwait({ type: 'preview', bitmap }) as any
     return res.data
@@ -39,7 +43,7 @@ export class CvWorkerClient {
   private _postAwait(msg: WorkerIn): Promise<WorkerOut> {
     return new Promise((res) => {
       this.resolvers.push(res)
-      this.worker.postMessage(msg, this._transferables(msg))
+      this.worker.postMessage(msg, this._transferables(msg) as any)
     })
   }
 

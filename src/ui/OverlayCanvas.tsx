@@ -19,5 +19,5 @@ export function OverlayCanvas({ canvasRef, analysis, flags }: { canvasRef: React
     }
   }, [analysis])
 
-  return <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0 }} />
+  return <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
 }

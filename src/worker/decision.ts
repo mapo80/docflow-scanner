@@ -5,7 +5,7 @@ import type { PreviewAnalysis } from './types'
 type DocTypeLabel = 'A4' | 'ID1' | 'Receipt' | 'Unknown'
 type Decision = 'WAITING' | 'HOLD_STEADY' | 'READY_TO_CAPTURE' | 'BAD_LIGHT' | 'TOO_BLURRY' | 'MOVE_CLOSER'
 
-export function decide(quality: PreviewAnalysis['quality'], docType: {label: DocTypeLabel}, thresholdsIn: any, adaptiveIn: any): Decision {
+export function decide(quality: PreviewAnalysis['quality'], docType: { label: DocTypeLabel }): Decision {
   const base = adaptive.defaults
   const ov = (adaptive.overrides as any)[docType.label] || {}
   const blurMin = thresholds.blurMin ?? base.blurMin

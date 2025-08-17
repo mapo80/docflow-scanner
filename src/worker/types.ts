@@ -13,6 +13,7 @@ export type PreviewAnalysis = {
   }
   decision: 'WAITING' | 'HOLD_STEADY' | 'READY_TO_CAPTURE' | 'BAD_LIGHT' | 'TOO_BLURRY' | 'MOVE_CLOSER'
   perf: Record<string, number>
+  docType?: { label: string, confidence?: number }
 }
 
 export type FinalDocument = {

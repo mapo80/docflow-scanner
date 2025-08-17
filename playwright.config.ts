@@ -8,12 +8,12 @@ export default defineConfig({
   timeout: 60_000,
   retries: 0,
   webServer: {
-    command: 'npm run dev',
-    port: 5173,
+    command: 'npm run serve:prod',
+    port: 8080,
     reuseExistingServer: !process.env.CI
   },
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: 'http://localhost:8080',
     headless: true,
     permissions: ['camera'],
     launchOptions: {

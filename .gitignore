@@ -1,0 +1,9 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+tests/datasets/
+tests/reports/
+public/opencv/
+package-lock.json
+tsconfig.tsbuildinfo
