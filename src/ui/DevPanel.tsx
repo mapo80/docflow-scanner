@@ -4,11 +4,13 @@ import { buildEffectivePolicies } from '../utils/ProfileService'
 import { TelemetryExporter } from '../utils/TelemetryExporter'
 import type { PreviewAnalysis } from '../worker/types'
 import { ProfilerChart } from './ProfilerChart'
+import { RuntimeConfig } from '../utils/RuntimeConfig'
 
 export function DevPanel({ worker, analysis }:{ worker: CvWorkerClient, analysis: PreviewAnalysis | null }) {
   const base = useMemo(()=>buildEffectivePolicies(), [])
   const [thr, setThr] = useState<any>(base.thresholds)
   const [adaptive] = useState<any>(base.adaptive)
+  const features = useMemo(() => RuntimeConfig.load(), [])
   const [series, setSeries] = useState<any[]>([])
   const [tel] = useState(()=> new TelemetryExporter())
 
@@ -29,11 +31,11 @@ export function DevPanel({ worker, analysis }:{ worker: CvWorkerClient, analysis
   }, [analysis])
 
   const apply = async () => {
-    await worker.updatePolicies({ thresholds: thr, adaptive })
+    await worker.updatePolicies({ thresholds: thr, adaptive, features })
   }
   const reset = async () => {
     const b = buildEffectivePolicies()
-    setThr(b.thresholds); await worker.updatePolicies(b)
+    setThr(b.thresholds); await worker.updatePolicies({ thresholds: b.thresholds, adaptive: b.adaptive, features })
   }
   const url = new URL(window.location.href)
   const visible = url.searchParams.get('devpanel') === '1'

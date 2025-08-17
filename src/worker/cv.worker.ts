@@ -20,7 +20,7 @@ async function loadOpenCV(engineLocation: string) {
     if (script) {
       script.src = engineLocation + 'opencv.js'
       script.onload = () => resolve()
-      script.onerror = e => reject(e)
+      script.onerror = (e: any) => reject(e)
       ;(self as any).document.head.appendChild(script)
     } else {
       importScripts(engineLocation + 'opencv.js')
